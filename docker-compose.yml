@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  jenkins:
+    build: ./jenkins
+    ports:
+    - "8080:8080"
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      vn1:
+
+  jupyter:
+    build: ./data_science
+    ports:
+    - "8888:8888"
+    networks:
+      vn1:
+
+networks:
+  vn1:
+    driver: bridge
