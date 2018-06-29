@@ -17,6 +17,13 @@ services:
     networks:
       vn1:
 
+  registry:
+    build: ./registry
+    ports:
+    - "5000:5000"
+    networks:
+      vn1:
+
 networks:
   vn1:
     driver: bridge
