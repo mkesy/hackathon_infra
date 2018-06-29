@@ -11,9 +11,12 @@ services:
       vn1:
 
   jupyter:
-    build: ./data_science
+    #build: ./data_science
+    image: jupyter/scipy-notebook
     ports:
     - "8888:8888"
+    volumes:
+    - ../data_science:/home/jovyan/work
     networks:
       vn1:
 
